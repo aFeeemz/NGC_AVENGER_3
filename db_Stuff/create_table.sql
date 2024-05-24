@@ -1,0 +1,13 @@
+CREATE TABLE Heroes (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    Name VARCHAR(255),
+    Universe VARCHAR(100),
+    Skill VARCHAR(100)
+);
+
+CREATE TABLE Villains (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    Name VARCHAR(255),
+    Universe VARCHAR(100),
+    ImageURL VARCHAR(255)
+);
