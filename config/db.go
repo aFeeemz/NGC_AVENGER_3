@@ -16,12 +16,13 @@ func ConnectDB() *sql.DB {
 	}
 
 	dbUser := os.Getenv("DB_USER")
-	dbPassword := os.Getenv("DB_PASSWORD")
+	dbPassword := os.Getenv("DB_PASS")
 	dbHost := os.Getenv("DB_HOST")
 	dbName := os.Getenv("DB_NAME")
+	dbPort := os.Getenv("DB_PORT")
 
 	// Create the data source name (DSN) string
-	dsn := fmt.Sprintf("%s:%s@tcp(%s)/%s", dbUser, dbPassword, dbHost, dbName)
+	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s", dbUser, dbPassword, dbHost, dbPort, dbName)
 
 	// Open a connection to the database
 	db, err := sql.Open("mysql", dsn)
